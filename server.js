@@ -7,7 +7,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: ['https://personal-finance-visualizzer.vercel.app', 'http://localhost:5173'],
+  origin: true, // Allow all origins temporarily
   credentials: true
 }));
 app.use(express.json());
