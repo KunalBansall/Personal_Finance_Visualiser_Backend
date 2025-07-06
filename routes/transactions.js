@@ -4,11 +4,15 @@ const {
   getAllTransactions,
   createTransaction,
   updateTransaction,
-  deleteTransaction
+  deleteTransaction,
+  getSummary
 } = require('../controllers/transactionController');
 
 // GET all transactions
 router.get('/', getAllTransactions);
+
+// GET summary
+router.get('/summary', getSummary);
 
 // POST new transaction
 router.post('/', createTransaction);
