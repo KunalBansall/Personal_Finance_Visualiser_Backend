@@ -7,16 +7,18 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: true, // Allow all origins temporarily
+  origin: true,
   credentials: true
 }));
 app.use(express.json());
 
 // Import routes
 const routes = require('./routes');
+const budgetRoutes = require('./routes/budgetRoutes');
 
 // Mount all routes
 app.use('/api', routes);
+app.use('/api/budgets', budgetRoutes);
 
 // Root route
 app.get('/', (req, res) => {
